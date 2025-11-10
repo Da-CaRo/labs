@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <title>Da_CaRo | Labs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        /* 1. DEFINICIÓN DE VARIABLES DE COLOR */
+        :root {
+            --color-acento: #10b981;
+            /* Color Primario: Verde Esmeralda */
+            --color-fondo: #030712;
+            /* Color de Fondo: Gris Casi Negro */
+            --color-tarjeta: #1F2937;
+            /* Color de Contenedor: Gris Oscuro */
+
+            --color-texto-claro: #F3F4F6;
+            --color-texto-gris: #9CA3AF;
+            --color-borde: #374151;
+        }
+
+        /* 2. APLICACIÓN DE VARIABLES A LOS ESTILOS GLOBALMENTE */
+        body {
+            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--color-fondo);
+            /* Usando variable */
+            color: var(--color-texto-claro);
+            /* Usando variable */
+        }
+
+        /* Para usar una fuente monoespaciada en títulos específicos */
+        .font-code {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        }
+
+        /* Sobrescribir las clases de Tailwind con las variables (para el color de acento) */
+        .text-acento {
+            color: var(--color-acento);
+        }
+
+        .hover-acento:hover {
+            color: var(--color-acento) !important;
+        }
+
+        .border-acento:hover {
+            border-color: var(--color-acento) !important;
+        }
+
+        .bg-tarjeta {
+            background-color: var(--color-tarjeta);
+        }
+
+        .border-tarjeta {
+            border-color: var(--color-borde);
+        }
+
+        /* Ajuste específico para el texto gris de las tarjetas */
+        .text-texto-gris {
+            color: var(--color-texto-gris);
+        }
+    </style>
+</head>
+
+<body class="min-h-screen antialiased">
+    <header class="bg-gray-900 shadow-md p-4 border-b border-gray-800 sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto flex justify-between items-center py-0">
+            <div class="flex items-center space-x-2">
+                <!--<span class="text-acento text-3xl leading-none"> &lt;/&gt; </span>-->
+                <img src="img/favicon.png" alt="Icono </> DaCaro Labs" class="h-8 w-8">
+                <h1 class="text-3xl font-extrabold text-acento font-code">
+                    <span class="-mr-2 inline-block">Da_CaRo</span> Labs
+                </h1>
+            </div>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#" class="text-gray-300 hover-acento transition duration-300 hidden">Inicio</a>
+                <a href="#" class="text-gray-300 hover-acento transition duration-300 hidden">Documentación</a>
+                <a href="#" class="text-gray-300 hover-acento transition duration-300 hidden">Proyectos</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="py-8 md:py-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+
+            <h1 class="text-5xl md:text-6xl font-extrabold mb-4 leading-tight">
+                Bienvenido a <span class="font-code text-acento">
+                    <span class="-mr-2 inline-block">Da_CaRo</span> Labs
+                </span>
+            </h1>
+
+            <p class="text-xl text-texto-gris mb-12 max-w-2xl mx-auto">
+                Explora mis proyectos.
+            </p>
+        </div>
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <a href="#" class="block">
+                    <div
+                        class="bg-tarjeta p-6 rounded-lg shadow-xl border border-gray-700 border-acento hover-acento transition duration-300 h-full flex flex-col justify-between">
+                        <div>
+                            <span class="text-acento text-4xl mb-3 block">🖥️</span>
+                            <h3 class="text-2xl font-bold mb-2 text-gray-100 font-code">API RESTful</h3>
+                            <p class="text-texto-gris text-base">Un potente backend desarrollado con Node.js y Express,
+                                centrado en la eficiencia y escalabilidad para microservicios.</p>
+                        </div>
+                        <span class="mt-5 inline-block text-sm font-medium text-acento hover:underline">Explorar
+                            Proyecto →</span>
+                    </div>
+                </a>
+
+                <a href="#" class="block">
+                    <div
+                        class="bg-tarjeta p-6 rounded-lg shadow-xl border border-gray-700 border-acento hover-acento transition duration-300 h-full flex flex-col justify-between">
+                        <div>
+                            <span class="text-acento text-4xl mb-3 block">⚙️</span>
+                            <h3 class="text-2xl font-bold mb-2 text-gray-100 font-code">Dashboard Admin</h3>
+                            <p class="text-texto-gris text-base">Interfaz de administración intuitiva y reactiva,
+                                construida con React para la gestión de datos complejos.</p>
+                        </div>
+                        <span class="mt-5 inline-block text-sm font-medium text-acento hover:underline">Acceder al
+                            Dashboard →</span>
+                    </div>
+                </a>
+
+                <a href="#" class="block">
+                    <div
+                        class="bg-tarjeta p-6 rounded-lg shadow-xl border border-gray-700 border-acento hover-acento transition duration-300 h-full flex flex-col justify-between">
+                        <div>
+                            <span class="text-acento text-4xl mb-3 block">📊</span>
+                            <h3 class="text-2xl font-bold mb-2 text-gray-100 font-code">Data Visualizer</h3>
+                            <p class="text-texto-gris text-base">Herramienta interactiva para la visualización de datos
+                                complejos, optimizada para insights rápidos.</p>
+                        </div>
+                        <span class="mt-5 inline-block text-sm font-medium text-acento hover:underline">Ver
+                            Herramienta →</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-gray-900 border-t border-gray-800 mt-16 py-4">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+
+                <p class="text-xs text-texto-gris mb-4 md:mb-0">
+                    &copy; <span id="currentYearFooter"></span> <span class="font-code">
+                        <span class="-mr-1 inline-block">Da_CaRo</span> Labs
+                    </span> Desarrollado con pasión.
+                </p>
+
+                <div class="flex space-x-6 items-center">
+                    <a href="https://github.com/da-caro" target="_blank"
+                        class="text-texto-gris hover-acento transition duration-300 text-sm">
+                        GitHub
+                    </a>
+                    <a href="#" target="_blank"
+                        class="text-xs text-texto-gris hover-acento transition duration-300 hidden">
+                        LinkedIn
+                    </a>
+                    <a href="#" target="_blank"
+                        class="text-xs text-texto-gris hover-acento transition duration-300 hidden">
+                        X
+                    </a>
+                    <a href="#" target="_blank"
+                        class="text-xs text-texto-gris hover-acento transition duration-300 hidden">
+                        Instagram
+                    </a>
+                    <a href="#" target="_blank"
+                        class="text-xs text-texto-gris hover-acento transition duration-300 hidden">
+                        TikTok
+                    </a>
+                    <a href="#" target="_blank"
+                        class="text-xs text-texto-gris hover-acento transition duration-300 hidden">
+                        YouTube
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('currentYearFooter').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
