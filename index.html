@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
 
     <style>
         /* 1. DEFINICIÓN DE VARIABLES DE COLOR */
@@ -65,9 +66,14 @@
             color: var(--color-texto-tarjeta);
         }
 
-        .setup-and-play{
+        .setup-and-play {
             color: #bb181d;
             font-family: 'Bangers', system-ui;
+        }
+
+        .agente-33 {
+            color: #eab308;
+            font-family: 'Orbitron', sans-serif;
         }
     </style>
 </head>
@@ -118,19 +124,21 @@
                     </div>
                 </a>
 
-                <a href="#" class="block">
+                <a href="https://da-caro.github.io/agente-33/" class="block">
                     <div
                         class="bg-tarjeta p-6 rounded-lg shadow-xl border border-tarjeta transition duration-300 h-full flex flex-col justify-between">
                         <div>
                             <div class="flex items-center space-x-3 mb-4">
-                                <span class="text-4xl">⚙️</span>
-                                <h3 class="text-xl font-bold text-gray-100 font-code">Dashboard Admin</h3>
+                                <img src="https://github.com/Da-CaRo/agente-33/blob/main/img/favicon.png?raw=true"
+                                    alt="Agente 33" class="w-10 h-10 object-contain rounded-md">
+                                <h3 class="text-4xl font-bold agente-33">Agente 33</h3>
                             </div>
-                            <p class="text-tarjeta text-base">Interfaz de administración intuitiva y reactiva,
-                                construida con React para la gestión de datos complejos.</p>
+                            <p class="text-tarjeta text-base">Descifra las pistas de tu capitán para identificar a los
+                                agentes secretos ocultos tras las palabras, pero ten cuidado: el asesino acecha en las
+                                sombras.</p>
                         </div>
-                        <span class="mt-5 inline-block text-sm font-medium text-acento hover:underline">Acceder al
-                            Dashboard →</span>
+                        <span class="mt-5 inline-block text-sm font-medium text-acento hover:underline">¡Jugar Ahora!
+                            →</span>
                     </div>
                 </a>
 
@@ -140,7 +148,7 @@
                         <div>
                             <div class="flex items-center space-x-3 mb-4">
                                 <span class="text-4xl">📊</span>
-                                <h3 class="text-xl font-bold text-gray-100 font-code">Data Visualizer</h3>
+                                <h3 class="text-4xl font-bold text-gray-100 font-code">Data Visualizer</h3>
                             </div>
                             <p class="text-tarjeta text-base">Herramienta interactiva para la visualización de datos
                                 complejos, optimizada para insights rápidos.</p>
