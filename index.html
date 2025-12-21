@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
 
     <style>
         /* 1. DEFINICIÓN DE VARIABLES DE COLOR */
@@ -63,6 +64,11 @@
         .text-tarjeta {
             color: var(--color-texto-tarjeta);
         }
+
+        .setup-and-play{
+            color: #bb181d;
+            font-family: 'Bangers', system-ui;
+        }
     </style>
 </head>
 
@@ -95,19 +101,20 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-                <a href="#" class="block">
+                <a href="https://da-caro.github.io/setup-and-play/" class="block">
                     <div
                         class="bg-tarjeta p-6 rounded-lg shadow-xl border border-tarjeta transition duration-300 h-full flex flex-col justify-between">
                         <div>
                             <div class="flex items-center space-x-3 mb-4">
-                                <span class="text-4xl">🖥️</span>
-                                <h3 class="text-xl font-bold text-gray-100 font-code">API RESTful</h3>
+                                <img src="https://raw.githubusercontent.com/Da-CaRo/setup-and-play/refs/heads/main/img/favicon.png"
+                                    alt="Setup and Play" class="w-10 h-10 object-contain rounded-md">
+                                <h3 class="text-4xl font-bold setup-and-play">Setup & Play</h3>
                             </div>
-                            <p class="text-tarjeta text-base">Un potente backend desarrollado con Node.js y Express,
-                                centrado en la eficiencia y escalabilidad para microservicios.</p>
+                            <p class="text-tarjeta text-base">Consulta las guías detalladas y los controles de
+                                configuración para dominar cada uno de los juegos disponibles.</p>
                         </div>
-                        <span class="mt-5 inline-block text-sm font-medium text-acento hover:underline">Explorar
-                            Proyecto →</span>
+                        <span class="mt-5 inline-block text-sm font-medium text-acento hover:underline">Ver Guías
+                            →</span>
                     </div>
                 </a>
 
