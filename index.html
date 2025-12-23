@@ -15,6 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ruslan+Display&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/gh/Da-CaRo/site-configs@main/control.js" data-web="labs"></script>
 
     <style>
@@ -111,6 +112,40 @@
             line-height: 1.2;
             display: inline-block;
             /* Asegura que el gradiente se calcule bien */
+        }
+
+        .loot-and-run {
+            font-family: 'Ruslan Display', cursive;
+            /* Degradado de esmeralda con facetas */
+            background: linear-gradient(135deg,
+                    #a7f3d0 0%,
+                    /* Reflejo de luz en el borde */
+                    #10b981 25%,
+                    /* Verde esmeralda base */
+                    #065f46 50%,
+                    /* Sombra interna profunda */
+                    #10b981 75%,
+                    /* Reflejo secundario */
+                    #047857 100%);
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+
+            /* El truco: Múltiples sombras para dar volumen de piedra */
+            filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.2));
+            text-shadow:
+                0px 2px 4px rgba(0, 0, 0, 0.5),
+                0px 0px 20px rgba(16, 185, 129, 0.4);
+            background-size: 200% auto;
+            animation: shine 5s linear infinite;
+        }
+
+        /*Function for the text of Loot & Run to shine*/
+        @keyframes shine {
+            to {
+                background-position: 200% center;
+            }
         }
     </style>
 </head>
@@ -226,6 +261,24 @@
                             <p class="text-tarjeta text-base">Un espectro de miles de colores y solo una palabra para
                                 guiarlos. Adivina la tonalidad exacta basándote en las pistas de tus amigos en este
                                 vibrante juego de ingenio.</p>
+                        </div>
+                        <span class="mt-5 inline-block text-sm font-medium text-acento hover:underline">¡Jugar Ahora!
+                            →</span>
+                    </div>
+                </a>
+
+                <a href="https://da-caro.github.io/loot-and-run/" class="block">
+                    <div
+                        class="bg-tarjeta p-6 rounded-lg shadow-xl border border-tarjeta transition duration-300 h-full flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center space-x-3 mb-4">
+                                <img src="https://github.com/Da-CaRo/loot-and-run/blob/main/img/favicon.png?raw=true"
+                                    alt="Loot & Run" class="w-10 h-10 object-contain rounded-md">
+                                <h3 class="text-4xl font-bold loot-and-run">Loot & Run</h3>
+                            </div>
+                            <p class="text-tarjeta text-base">Aventúrate en cuevas profundas en busca de gemas
+                                preciosas, pero decide rápido: ¿te retiras con tu botín o arriesgas todo antes de que
+                                una trampa te deje con las manos vacías?</p>
                         </div>
                         <span class="mt-5 inline-block text-sm font-medium text-acento hover:underline">¡Jugar Ahora!
                             →</span>
