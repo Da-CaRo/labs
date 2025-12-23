@@ -14,6 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/gh/Da-CaRo/site-configs@main/control.js" data-web="labs"></script>
 
     <style>
@@ -87,6 +88,29 @@
         .tres-pistas {
             color: #1ec8c5;
             font-family: 'Luckiest Guy', cursive;
+        }
+
+        .prisma {
+            font-family: 'Bungee Shade', sans-serif;
+            text-transform: uppercase;
+            /* Aplicación del Gradiente */
+            background: linear-gradient(45deg,
+                    #2dffeb 20%,
+                    #8f54b3 40%,
+                    #fcba49 60%,
+                    #2c75e3 90%);
+
+            /* Truco para que el fondo solo pinte el texto */
+            -webkit-background-clip: text;
+            background-clip: text;
+
+            /* Hacemos transparente el color original de la fuente para ver el gradiente */
+            color: transparent;
+
+            filter: drop-shadow(0 0 8px rgba(30, 200, 197, 0.3));
+            line-height: 1.2;
+            display: inline-block;
+            /* Asegura que el gradiente se calcule bien */
         }
     </style>
 </head>
@@ -184,6 +208,24 @@
                             </div>
                             <p class="text-tarjeta text-base">El desafío definitivo de adivinación por equipos en tres
                                 rondas frenéticas. Describe, resume y actúa contra reloj.</p>
+                        </div>
+                        <span class="mt-5 inline-block text-sm font-medium text-acento hover:underline">¡Jugar Ahora!
+                            →</span>
+                    </div>
+                </a>
+
+                <a href="https://da-caro.github.io/prisma/" class="block">
+                    <div
+                        class="bg-tarjeta p-6 rounded-lg shadow-xl border border-tarjeta transition duration-300 h-full flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center space-x-3 mb-4">
+                                <img src="https://github.com/Da-CaRo/prisma/blob/main/img/favicon.png?raw=true"
+                                    alt="Prisma" class="w-10 h-10 object-contain rounded-md">
+                                <h3 class="text-4xl font-bold prisma">Prisma</h3>
+                            </div>
+                            <p class="text-tarjeta text-base">Un espectro de miles de colores y solo una palabra para
+                                guiarlos. Adivina la tonalidad exacta basándote en las pistas de tus amigos en este
+                                vibrante juego de ingenio.</p>
                         </div>
                         <span class="mt-5 inline-block text-sm font-medium text-acento hover:underline">¡Jugar Ahora!
                             →</span>
