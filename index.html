@@ -7,6 +7,16 @@
     <link rel="icon" type="image/png" href="img/favicon.png">
     <title>Da_CaRo | Labs</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ruslan+Display&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/Da-CaRo/site-configs@main/control.js" data-web="labs"></script>
 
     <style>
         /* 1. DEFINICIÓN DE VARIABLES DE COLOR */
@@ -18,23 +28,21 @@
             --color-tarjeta: #1F2937;
             /* Color de Contenedor: Gris Oscuro */
 
-            --color-texto-claro: #F3F4F6;
-            --color-texto-gris: #9CA3AF;
-            --color-borde: #374151;
+            --color-texto: #F3F4F6;
+            --color-texto-tarjeta: #9CA3AF;
+            --color-borde-tarjeta: #374151;
         }
 
         /* 2. APLICACIÓN DE VARIABLES A LOS ESTILOS GLOBALMENTE */
         body {
             font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
             background-color: var(--color-fondo);
-            /* Usando variable */
-            color: var(--color-texto-claro);
-            /* Usando variable */
+            color: var(--color-texto);
         }
 
         /* Para usar una fuente monoespaciada en títulos específicos */
         .font-code {
-            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            font-family: 'Space Mono', ui-monospace, SFMono-Regular, monospace;
         }
 
         /* Sobrescribir las clases de Tailwind con las variables (para el color de acento) */
@@ -43,11 +51,7 @@
         }
 
         .hover-acento:hover {
-            color: var(--color-acento) !important;
-        }
-
-        .border-acento:hover {
-            border-color: var(--color-acento) !important;
+            color: var(--color-acento);
         }
 
         .bg-tarjeta {
@@ -55,12 +59,93 @@
         }
 
         .border-tarjeta {
-            border-color: var(--color-borde);
+            border-color: var(--color-borde-tarjeta);
+        }
+
+        .border-tarjeta:hover {
+            border-color: var(--color-acento);
         }
 
         /* Ajuste específico para el texto gris de las tarjetas */
-        .text-texto-gris {
-            color: var(--color-texto-gris);
+        .text-tarjeta {
+            color: var(--color-texto-tarjeta);
+        }
+
+        .setup-and-play {
+            color: #bb181d;
+            font-family: 'Bangers', system-ui;
+        }
+
+        .agente-33 {
+            color: #eab308;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .el-impostor {
+            color: #FF3B30;
+            font-family: 'Metal Mania', system-ui;
+        }
+
+        .tres-pistas {
+            color: #1ec8c5;
+            font-family: 'Luckiest Guy', cursive;
+        }
+
+        .prisma {
+            font-family: 'Bungee Shade', sans-serif;
+            text-transform: uppercase;
+            /* Aplicación del Gradiente */
+            background: linear-gradient(45deg,
+                    #2dffeb 20%,
+                    #8f54b3 40%,
+                    #fcba49 60%,
+                    #2c75e3 90%);
+
+            /* Truco para que el fondo solo pinte el texto */
+            -webkit-background-clip: text;
+            background-clip: text;
+
+            /* Hacemos transparente el color original de la fuente para ver el gradiente */
+            color: transparent;
+
+            filter: drop-shadow(0 0 8px rgba(30, 200, 197, 0.3));
+            line-height: 1.2;
+            display: inline-block;
+            /* Asegura que el gradiente se calcule bien */
+        }
+
+        .loot-and-run {
+            font-family: 'Ruslan Display', cursive;
+            /* Degradado de esmeralda con facetas */
+            background: linear-gradient(135deg,
+                    #a7f3d0 0%,
+                    /* Reflejo de luz en el borde */
+                    #10b981 25%,
+                    /* Verde esmeralda base */
+                    #065f46 50%,
+                    /* Sombra interna profunda */
+                    #10b981 75%,
+                    /* Reflejo secundario */
+                    #047857 100%);
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+
+            /* El truco: Múltiples sombras para dar volumen de piedra */
+            filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.2));
+            text-shadow:
+                0px 2px 4px rgba(0, 0, 0, 0.5),
+                0px 0px 20px rgba(16, 185, 129, 0.4);
+            background-size: 200% auto;
+            animation: shine 5s linear infinite;
+        }
+
+        /*Function for the text of Loot & Run to shine*/
+        @keyframes shine {
+            to {
+                background-position: 200% center;
+            }
         }
     </style>
 </head>
@@ -69,17 +154,12 @@
     <header class="bg-gray-900 shadow-md p-4 border-b border-gray-800 sticky top-0 z-10">
         <div class="max-w-7xl mx-auto flex justify-between items-center py-0">
             <div class="flex items-center space-x-2">
-                <!--<span class="text-acento text-3xl leading-none"> &lt;/&gt; </span>-->
-                <img src="img/favicon.png" alt="Icono </> DaCaro Labs" class="h-8 w-8">
-                <h1 class="text-3xl font-extrabold text-acento font-code">
-                    <span class="-mr-2 inline-block">Da_CaRo</span> Labs
+                <img src="img/favicon.png" class="h-8 w-8">
+                <h1 class="text-3xl font-code">
+                    <span class="font-bold text-acento -mr-2 inline-block">Da_CaRo</span>
+                    <span class="font-normal opacity-70">Labs</span>
                 </h1>
             </div>
-            <nav class="hidden md:flex space-x-6">
-                <a href="#" class="text-gray-300 hover-acento transition duration-300 hidden">Inicio</a>
-                <a href="#" class="text-gray-300 hover-acento transition duration-300 hidden">Documentación</a>
-                <a href="#" class="text-gray-300 hover-acento transition duration-300 hidden">Proyectos</a>
-            </nav>
         </div>
     </header>
 
@@ -87,60 +167,124 @@
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 
             <h1 class="text-5xl md:text-6xl font-extrabold mb-4 leading-tight">
-                Bienvenido a <span class="font-code text-acento">
-                    <span class="-mr-2 inline-block">Da_CaRo</span> Labs
-                </span>
+                Pulsa <span class="text-acento font-code">Start</span> para Comenzar
             </h1>
 
-            <p class="text-xl text-texto-gris mb-12 max-w-2xl mx-auto">
-                Explora mis proyectos.
+            <p class="text-xl text-tarjeta mb-12 max-w-2xl mx-auto">
+                Experiencias interactivas y mundos digitales creados byte a byte. Selecciona una aventura y prepárate
+                para el siguiente nivel.
             </p>
         </div>
 
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-                <a href="#" class="block">
+                <a href="https://da-caro.github.io/setup-and-play/" class="block">
                     <div
-                        class="bg-tarjeta p-6 rounded-lg shadow-xl border border-gray-700 border-acento hover-acento transition duration-300 h-full flex flex-col justify-between">
+                        class="bg-tarjeta p-6 rounded-lg shadow-xl border border-tarjeta transition duration-300 h-full flex flex-col justify-between">
                         <div>
-                            <span class="text-acento text-4xl mb-3 block">🖥️</span>
-                            <h3 class="text-2xl font-bold mb-2 text-gray-100 font-code">API RESTful</h3>
-                            <p class="text-texto-gris text-base">Un potente backend desarrollado con Node.js y Express,
-                                centrado en la eficiencia y escalabilidad para microservicios.</p>
+                            <div class="flex items-center space-x-3 mb-4">
+                                <img src="https://raw.githubusercontent.com/Da-CaRo/setup-and-play/refs/heads/main/img/favicon.png"
+                                    alt="Setup and Play" class="w-10 h-10 object-contain rounded-md">
+                                <h3 class="text-4xl font-bold setup-and-play">Setup & Play</h3>
+                            </div>
+                            <p class="text-tarjeta text-base">Consulta las guías detalladas y los controles de
+                                configuración para dominar cada uno de los juegos disponibles.</p>
                         </div>
-                        <span class="mt-5 inline-block text-sm font-medium text-acento hover:underline">Explorar
-                            Proyecto →</span>
+                        <span class="mt-5 inline-block text-sm font-medium text-acento hover:underline">Ver Guías
+                            →</span>
                     </div>
                 </a>
 
-                <a href="#" class="block">
+                <a href="https://da-caro.github.io/agente-33/" class="block">
                     <div
-                        class="bg-tarjeta p-6 rounded-lg shadow-xl border border-gray-700 border-acento hover-acento transition duration-300 h-full flex flex-col justify-between">
+                        class="bg-tarjeta p-6 rounded-lg shadow-xl border border-tarjeta transition duration-300 h-full flex flex-col justify-between">
                         <div>
-                            <span class="text-acento text-4xl mb-3 block">⚙️</span>
-                            <h3 class="text-2xl font-bold mb-2 text-gray-100 font-code">Dashboard Admin</h3>
-                            <p class="text-texto-gris text-base">Interfaz de administración intuitiva y reactiva,
-                                construida con React para la gestión de datos complejos.</p>
+                            <div class="flex items-center space-x-3 mb-4">
+                                <img src="https://github.com/Da-CaRo/agente-33/blob/main/img/favicon.png?raw=true"
+                                    alt="Agente 33" class="w-10 h-10 object-contain rounded-md">
+                                <h3 class="text-4xl font-bold agente-33">Agente 33</h3>
+                            </div>
+                            <p class="text-tarjeta text-base">Descifra las pistas de tu capitán para identificar a los
+                                agentes secretos ocultos tras las palabras, pero ten cuidado: el asesino acecha en las
+                                sombras.</p>
                         </div>
-                        <span class="mt-5 inline-block text-sm font-medium text-acento hover:underline">Acceder al
-                            Dashboard →</span>
+                        <span class="mt-5 inline-block text-sm font-medium text-acento hover:underline">¡Jugar Ahora!
+                            →</span>
                     </div>
                 </a>
 
-                <a href="#" class="block">
+                <a href="https://da-caro.github.io/el-impostor/" class="block">
                     <div
-                        class="bg-tarjeta p-6 rounded-lg shadow-xl border border-gray-700 border-acento hover-acento transition duration-300 h-full flex flex-col justify-between">
+                        class="bg-tarjeta p-6 rounded-lg shadow-xl border border-tarjeta transition duration-300 h-full flex flex-col justify-between">
                         <div>
-                            <span class="text-acento text-4xl mb-3 block">📊</span>
-                            <h3 class="text-2xl font-bold mb-2 text-gray-100 font-code">Data Visualizer</h3>
-                            <p class="text-texto-gris text-base">Herramienta interactiva para la visualización de datos
-                                complejos, optimizada para insights rápidos.</p>
+                            <div class="flex items-center space-x-3 mb-4">
+                                <img src="https://github.com/Da-CaRo/el-impostor/blob/main/img/favicon.png?raw=true"
+                                    alt="El Impostor" class="w-10 h-10 object-contain rounded-md">
+                                <h3 class="text-4xl font-bold el-impostor">El Impostor</h3>
+                            </div>
+                            <p class="text-tarjeta text-base">Un duelo de ingenio y engaño donde las palabras son tu
+                                única arma. ¿Podrás pasar desapercibido o serás descubierto antes de que termine la
+                                ronda?</p>
                         </div>
-                        <span class="mt-5 inline-block text-sm font-medium text-acento hover:underline">Ver
-                            Herramienta →</span>
+                        <span class="mt-5 inline-block text-sm font-medium text-acento hover:underline">¡Jugar Ahora!
+                            →</span>
                     </div>
                 </a>
+
+                <a href="https://da-caro.github.io/tres-pistas/" class="block">
+                    <div
+                        class="bg-tarjeta p-6 rounded-lg shadow-xl border border-tarjeta transition duration-300 h-full flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center space-x-3 mb-4">
+                                <img src="https://github.com/Da-CaRo/tres-pistas/blob/main/img/favicon.png?raw=true"
+                                    alt="Tres Pistas" class="w-10 h-10 object-contain rounded-md">
+                                <h3 class="text-4xl font-bold tres-pistas">Tres Pistas</h3>
+                            </div>
+                            <p class="text-tarjeta text-base">El desafío definitivo de adivinación por equipos en tres
+                                rondas frenéticas. Describe, resume y actúa contra reloj.</p>
+                        </div>
+                        <span class="mt-5 inline-block text-sm font-medium text-acento hover:underline">¡Jugar Ahora!
+                            →</span>
+                    </div>
+                </a>
+
+                <a href="https://da-caro.github.io/prisma/" class="block">
+                    <div
+                        class="bg-tarjeta p-6 rounded-lg shadow-xl border border-tarjeta transition duration-300 h-full flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center space-x-3 mb-4">
+                                <img src="https://github.com/Da-CaRo/prisma/blob/main/img/favicon.png?raw=true"
+                                    alt="Prisma" class="w-10 h-10 object-contain rounded-md">
+                                <h3 class="text-4xl font-bold prisma">Prisma</h3>
+                            </div>
+                            <p class="text-tarjeta text-base">Un espectro de miles de colores y solo una palabra para
+                                guiarlos. Adivina la tonalidad exacta basándote en las pistas de tus amigos en este
+                                vibrante juego de ingenio.</p>
+                        </div>
+                        <span class="mt-5 inline-block text-sm font-medium text-acento hover:underline">¡Jugar Ahora!
+                            →</span>
+                    </div>
+                </a>
+
+                <a href="https://da-caro.github.io/loot-and-run/" class="block">
+                    <div
+                        class="bg-tarjeta p-6 rounded-lg shadow-xl border border-tarjeta transition duration-300 h-full flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center space-x-3 mb-4">
+                                <img src="https://github.com/Da-CaRo/loot-and-run/blob/main/img/favicon.png?raw=true"
+                                    alt="Loot & Run" class="w-10 h-10 object-contain rounded-md">
+                                <h3 class="text-4xl font-bold loot-and-run">Loot & Run</h3>
+                            </div>
+                            <p class="text-tarjeta text-base">Aventúrate en cuevas profundas en busca de gemas
+                                preciosas, pero decide rápido: ¿te retiras con tu botín o arriesgas todo antes de que
+                                una trampa te deje con las manos vacías?</p>
+                        </div>
+                        <span class="mt-5 inline-block text-sm font-medium text-acento hover:underline">¡Jugar Ahora!
+                            →</span>
+                    </div>
+                </a>
+
             </div>
         </div>
     </div>
@@ -149,36 +293,20 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
 
-                <p class="text-xs text-texto-gris mb-4 md:mb-0">
+                <p class="text-xs text-tarjeta mb-4 md:mb-0">
                     &copy; <span id="currentYearFooter"></span> <span class="font-code">
-                        <span class="-mr-1 inline-block">Da_CaRo</span> Labs
-                    </span> Desarrollado con pasión.
+                        Da_CaRo
+                    </span>
                 </p>
 
                 <div class="flex space-x-6 items-center">
+                    <a href="https://da-caro.github.io/labs" target="_blank"
+                        class="text-tarjeta hover-acento transition duration-300 text-sm">
+                        Labs
+                    </a>
                     <a href="https://github.com/da-caro" target="_blank"
-                        class="text-texto-gris hover-acento transition duration-300 text-sm">
+                        class="text-tarjeta hover-acento transition duration-300 text-sm">
                         GitHub
-                    </a>
-                    <a href="#" target="_blank"
-                        class="text-xs text-texto-gris hover-acento transition duration-300 hidden">
-                        LinkedIn
-                    </a>
-                    <a href="#" target="_blank"
-                        class="text-xs text-texto-gris hover-acento transition duration-300 hidden">
-                        X
-                    </a>
-                    <a href="#" target="_blank"
-                        class="text-xs text-texto-gris hover-acento transition duration-300 hidden">
-                        Instagram
-                    </a>
-                    <a href="#" target="_blank"
-                        class="text-xs text-texto-gris hover-acento transition duration-300 hidden">
-                        TikTok
-                    </a>
-                    <a href="#" target="_blank"
-                        class="text-xs text-texto-gris hover-acento transition duration-300 hidden">
-                        YouTube
                     </a>
                 </div>
             </div>
